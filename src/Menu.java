@@ -18,7 +18,7 @@ public class Menu {
 
             switch (firstOption) {
                 case 1:
-                    System.out.println("----- Gestion de Usuarios -----");
+                    System.out.println("----- Gestion de Usuarios -----\n");
                     char secondOption;
                     do {
                         System.out.println("A. Registrar Ususario.");
@@ -52,7 +52,7 @@ public class Menu {
                     break;
 
                 case 2 :
-                    System.out.println("----- Gestion de Prestamos -----");
+                    System.out.println("----- Gestion de Prestamos -----\n");
                     char thirdOption;
                     do {
                         System.out.println("A. Registrar Prestamo.");
@@ -80,7 +80,39 @@ public class Menu {
                         }
                     }while (thirdOption != 'S');
                     break;
+                case 3 :
+                    System.out.println("----- Gestion de Inventarios. -----\n");
+                    char fourthOption;
 
+                    do {
+                        System.out.println("A. Agregar Nuevo Libro.");
+                        System.out.println("B. Eliminar Libro.");
+                        System.out.println("C. Modificar Datos De Un Libro.");
+                        System.out.println("D. Inventario.");
+                        System.out.println("S. Salir.");
+                        System.out.println("Digite la Opcion aqui ↓: ");
+                        fourthOption = sc.next().toUpperCase().charAt(0);
+
+                        switch (fourthOption){
+                            case 'A' :
+                                System.out.println("----- Agregar Libro -----");
+                                break;
+                            case 'B' :
+                                System.out.println("----- Eliminar Libro -----");
+                                break;
+                            case 'C' :
+                                System.out.println("----- Modifica Un Libro -----");
+                                break;
+                            case 'D' :
+                                System.out.println("----- Expide Un Inventario -----");
+                                break;
+                            case 'S':
+                                System.out.println("¿Terminaste? bye!....");
+                                break;
+                            default:
+                                System.out.println("Nanai Opcion Incorrecta...");
+                        }
+                    }while (fourthOption != 'S');
             }
 
 
