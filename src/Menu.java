@@ -49,31 +49,28 @@ public class Menu {
                                 System.out.println("Opcion No Valida...");
                         }
                     }while (secondOption != 'S');
+                    break;
 
                 case 2 :
-                    System.out.println("----- Gestion de Usuarios -----");
+                    System.out.println("----- Gestion de Prestamos -----");
                     char thirdOption;
                     do {
-                        System.out.println("A. Registrar Ususario.");
-                        System.out.println("B. Eliminar Usuario.");
-                        System.out.println("C. Modificar Usuario.");
-                        System.out.println("D. Listar Usuarios.");
-                        System.out.println("S. Salir, Gestion de Usuarios. \n");
+                        System.out.println("A. Registrar Prestamo.");
+                        System.out.println("B. Registrar Devolucion.");
+                        System.out.println("C. Listar Prestamos Activos.");
+                        System.out.println("S. Salir, Gestion Prestamos. \n");
                         System.out.println("Digite la Opcion aqui ↓: ");
                         thirdOption = sc.next().toUpperCase().charAt(0); // lee -- pasa a mayuscula -- toma el primer caracter
 
                         switch (thirdOption){
                             case 'A' :
-                                System.out.println("----- Registro Para Nuevo Usuario. -----");
+                                System.out.println("----- Registra Un Prestamo. -----");
                                 break;
                             case 'B' :
-                                System.out.println("----- Eliminar A Un Usuario. -----");
+                                System.out.println("----- Registra Una Devolucion. -----");
                                 break;
                             case 'C' :
-                                System.out.println("----- Modificar A Un Usuario. -----");
-                                break;
-                            case 'D' :
-                                System.out.println("----- Expedir Lista De Usuarios. -----");
+                                System.out.println("----- Expedir Lista De Prestamos Activos. -----");
                                 break;
                             case 'S' :
                                 System.out.println("Hasta Luego...");
@@ -82,6 +79,7 @@ public class Menu {
                                 System.out.println("Opcion No Valida...");
                         }
                     }while (thirdOption != 'S');
+                    break;
 
             }
 
