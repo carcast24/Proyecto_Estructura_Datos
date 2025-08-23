@@ -20,6 +20,26 @@ public class Menu {
                 case 1:
                     System.out.println("----- Gestion de Usuarios -----");
                     char secondOption;
+                    do {
+                        System.out.println("A. Registrar Ususario.");
+                        System.out.println("B. Eliminar Usuario.");
+                        System.out.println("C. Modificar Usuario.");
+                        System.out.println("D. Listar Usuarios.");
+                        System.out.println("S. Salir, Gestion de Usuarios. \n");
+                        System.out.println("Digite la Opcion aqui ↓: ");
+                        secondOption = sc.next().toUpperCase().charAt(0); // lee -- pasa a mayuscula -- toma el primer caracter
+
+                        switch (secondOption){
+                            case 'A' :
+                                System.out.println("----- Registro Para Nuevo Usuario. -----");
+                            case 'B' :
+                                System.out.println("----- Eliminar A Un Usuario. -----");
+                            case 'C' :
+                                System.out.println("----- Modificar A Un Usuario. -----");
+                            case 'D' :
+
+                        }
+                    }
 
             }
 
