@@ -37,9 +37,11 @@ public class Menu {
                             case 'C' :
                                 System.out.println("----- Modificar A Un Usuario. -----");
                             case 'D' :
-
+                                System.out.println("----- Expedir Lista De Usuarios. -----");
+                            case 'S' :
+                                System.out.println("Hasta Luego...");
                         }
-                    }
+                    }while (secondOption != 'S');
 
             }
 
