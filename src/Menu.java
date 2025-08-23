@@ -113,6 +113,10 @@ public class Menu {
                                 System.out.println("Nanai Opcion Incorrecta...");
                         }
                     }while (fourthOption != 'S');
+                    break;
+                case 4 :
+                    System.out.println("----- Consultas -----");
+                    char fifthOption;
             }
 
 
