@@ -32,6 +32,17 @@ public class Usuarios {
         this.email = newEmail;
     }
 
+    // method toString
+
+    public String toString(){
+        return "***** Informacion De Usuario *****" + "\n" +
+                "---------------------------------" + "\n" +
+                "Nombre: " + name + "\n" +
+                "Cedula: " + id + "\n" +
+                "Correo: " + email + "\n" +
+                "---------------------------------";
+    }
+
 
 
 
