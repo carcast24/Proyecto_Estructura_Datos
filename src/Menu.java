@@ -161,6 +161,6 @@ public class Menu {
 
 
         } while (firstOption != 5);
-
+     sc.close();
     }
 }
