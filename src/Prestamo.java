@@ -3,16 +3,30 @@ public class Prestamo {
     private Usuarios usuarios;
     private Libros libro;
     private LocalDate LoanDate;
-    private boolean active;
+    private boolean status;
 
     // constructor
     public Prestamo(Usuarios usuarios, Libros libro){
         this.usuarios = usuarios;
         this.libro = libro;
         this.LoanDate = LocalDate.now(); // llama la fecha en formato local de la ejecucion
-        this.active = true; // por defecto esta activo el prestamo al registrarlo
+        this.status = true; // por defecto esta activo el prestamo al registrarlo
     }
 
     // class method
+    public void returnLoan(){
+        this.status = false;
+    } // pone el prestamo en desactivado
+
+    public String toString(){
+        return "----- Informacion De Prestamo -----" + "\n" +
+                "--------------------------------"+ "\n" +
+                "El usuario " + usuarios.getName() + "\n" +
+                "Tiene el libro " + "\n" +
+                                 libro.toString() + "\n" +
+                "Prestado el  " + LoanDate + "\n" +
+                "El prestamo se encuentra en estado: " + status + "\n" +
+                "---------------------------------";
+    }
 
 }
