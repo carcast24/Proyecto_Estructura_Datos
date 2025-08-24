@@ -154,6 +154,7 @@ public class Menu {
                      break;
                 case 5 :
                     System.out.println("¡Hasta Luego! Vuelve Pronto");
+                    break;
                 default:
                     System.out.println("Opcion No Valida Intenta De Nuevo");
             }
