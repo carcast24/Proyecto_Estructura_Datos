@@ -45,4 +45,16 @@ public class Libros {
     public void setGenres(String genres) {
         this.genres = genres;
     }
+
+    // toString
+
+    public String toString(){
+        return "----- Informacion De Libros -----" + "\n" +
+                "--------------------------------"+ "\n" +
+                "Titulo: " + title + "\n" +
+                "Autor: " + author + "\n" +
+                "ISBN: " + isbn + "\n" +
+                "Genero: " + genres + "\n" +
+                "---------------------------------";
+    }
 }
