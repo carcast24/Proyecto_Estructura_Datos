@@ -11,12 +11,11 @@ public class PrestamosManager implements Managers<Prestamo>{
     }
 
     @Override
-    public boolean eliminar(String usuarioId, String isbn) {
+    public boolean eliminar(String id) {
         for (int i = 0; i< prestamos.size(); i++){
-            Prestamo p = prestamos.get(i);
-            if (p.getUsuarios().getId().equalsIgnoreCase(usuarioId) && p.getLibro().getIsbn().equalsIgnoreCase(isbn)){
+            if (prestamos.get(i).getId().equalsIgnoreCase(id)){
                 prestamos.remove(i);
-                return true; //eliminado correctamente
+                return true;
             }
         }
         return false; // no encontrado

@@ -1,5 +1,7 @@
 import java.time.LocalDate;
 public class Prestamo {
+    private static int cont = 1; // para generar un ide unico por prestamo
+    private String id;
     private Usuarios usuarios;
     private Libros libro;
     private LocalDate LoanDate;
@@ -7,6 +9,7 @@ public class Prestamo {
 
     // constructor
     public Prestamo(Usuarios usuarios, Libros libro){
+        this.id = "PRE-" + cont++;
         this.usuarios = usuarios;
         this.libro = libro;
         this.LoanDate = LocalDate.now(); // llama la fecha en formato local de la ejecucion
@@ -19,6 +22,12 @@ public class Prestamo {
     } // pone el prestamo en desactivado
 
     // getter
+
+
+    public String getId() {
+        return id;
+    }
+
     public Usuarios getUsuarios(){
         return this.usuarios;
     }
