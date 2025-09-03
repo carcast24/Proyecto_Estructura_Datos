@@ -5,6 +5,7 @@ public interface Managers<T> {
     //eliminar registro
     boolean eliminar(String id);
 
+
     // modificar un registro
     boolean modificar(String id, T nuevo);
 

@@ -16,13 +16,14 @@ public class UsuariosManager implements Managers<Usuarios> {
         return eliminarUsuario(id);
     }
 
+
     @Override
     public boolean modificar(String id, Usuarios nuevo) {
         for(int i = 0; i < usuarios.size(); i++){
             if(usuarios.get(i).getId().equalsIgnoreCase(id)){
                 usuarios.set(i,nuevo);
+                return true; // hizo el cambio
             }
-            return true; // hizo el cambio
         }
         return false; // no encontro el id
     }
