@@ -63,7 +63,8 @@ public class UsuariosManager implements Managers<Usuarios> {
             System.out.println("D. Listar Usuarios.");
             System.out.println("S. Salir, Gestion de Usuarios. \n");
             System.out.println("Digite la Opcion aqui ↓: ");
-            secondOption = sc.next().toUpperCase().charAt(0); // lee -- pasa a mayuscula -- toma el primer caracter
+            String input = sc.nextLine().trim().toUpperCase();// lee -- pasa a mayuscula -- toma el primer caracter
+            secondOption = input.isEmpty()? ' ': input.charAt(0); 
 
             switch (secondOption){
                 case 'A' :

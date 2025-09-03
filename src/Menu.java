@@ -21,33 +21,7 @@ public class Menu {
 
 
                 case 2 :
-                    System.out.println("----- Gestion de Prestamos -----\n");
-                    char thirdOption;
-                    do {
-                        System.out.println("A. Registrar Prestamo.");
-                        System.out.println("B. Registrar Devolucion.");
-                        System.out.println("C. Listar Prestamos Activos.");
-                        System.out.println("S. Salir, Gestion Prestamos. \n");
-                        System.out.println("Digite la Opcion aqui ↓: ");
-                        thirdOption = sc.next().toUpperCase().charAt(0); // lee -- pasa a mayuscula -- toma el primer caracter
-
-                        switch (thirdOption){
-                            case 'A' :
-                                System.out.println("----- Registra Un Prestamo. -----");
-                                break;
-                            case 'B' :
-                                System.out.println("----- Registra Una Devolucion. -----");
-                                break;
-                            case 'C' :
-                                System.out.println("----- Expedir Lista De Prestamos Activos. -----");
-                                break;
-                            case 'S' :
-                                System.out.println("Hasta Luego...");
-                                break;
-                            default:
-                                System.out.println("Opcion No Valida...");
-                        }
-                    }while (thirdOption != 'S');
+                    
                     break;
                 case 3 :
                     System.out.println("----- Gestion de Inventarios. -----\n");

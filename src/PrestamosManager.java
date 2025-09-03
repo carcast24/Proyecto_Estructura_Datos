@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 public class PrestamosManager implements Managers<Prestamo>{
     private LinkedList<Prestamo> prestamos = new LinkedList<>();
@@ -11,9 +12,10 @@ public class PrestamosManager implements Managers<Prestamo>{
 
     @Override
     public boolean eliminar(String usuarioId, String isbn) {
-        for (Prestamo p : prestamos){
+        for (int i = 0; i< prestamos.size(); i++){
+            Prestamo p = prestamos.get(i);
             if (p.getUsuarios().getId().equalsIgnoreCase(usuarioId) && p.getLibro().getIsbn().equalsIgnoreCase(isbn)){
-                prestamos.remove(p);
+                prestamos.remove(i);
                 return true; //eliminado correctamente
             }
         }
@@ -32,12 +34,48 @@ public class PrestamosManager implements Managers<Prestamo>{
     }
 
     @Override
-    public Prestamo buscar(String id) {
+    public Prestamo buscar(String isbn) {
+        for(Prestamo p : prestamos){
+            if (p.getLibro().getIsbn().equalsIgnoreCase(isbn)) {
+                return p;
+            }
+        }
         return null;
     }
 
     @Override
     public List<Prestamo> listar() {
-        return List.of();
+        return prestamos;
+    }
+
+    public void menuPrestamos(Scanner sc){
+                    System.out.println("----- Gestion de Prestamos -----\n");
+                    char thirdOption;
+                    do {
+                        System.out.println("A. Registrar Prestamo.");
+                        System.out.println("B. Registrar Devolucion.");
+                        System.out.println("C. Listar Prestamos Activos.");
+                        System.out.println("S. Salir, Gestion Prestamos. \n");
+                        System.out.println("Digite la Opcion aqui ↓: ");
+                        String input =sc.nextLine().trim().toUpperCase(); // lee -- pasa a mayuscula -- toma el primer caracter
+                        thirdOption = input.isEmpty()? ' ' : input.charAt(0); // con ternario se valida si hay entrada vacia no se ejecuta el codigo
+
+                        switch (thirdOption){
+                            case 'A' :
+                                System.out.println("----- Registra Un Prestamo. -----");
+                                break;
+                            case 'B' :
+                                System.out.println("----- Registra Una Devolucion. -----");
+                                break;
+                            case 'C' :
+                                System.out.println("----- Expedir Lista De Prestamos Activos. -----");
+                                break;
+                            case 'S' :
+                                System.out.println("Hasta Luego...");
+                                break;
+                            default:
+                                System.out.println("Opcion No Valida...");
+                        }
+                    }while (thirdOption != 'S');
     }
 }
