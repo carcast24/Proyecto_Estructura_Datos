@@ -18,6 +18,41 @@ public class Prestamo {
         this.status = false;
     } // pone el prestamo en desactivado
 
+    // getter
+    public Usuarios getUsuarios(){
+        return this.usuarios;
+    }
+    public Libros getLibro(){
+        return this.libro;
+    }
+
+    public LocalDate getLoanDate() {
+        return LoanDate;
+    }
+    public boolean isStatus() {
+        return status;
+    }
+    // setters
+
+
+    public void setUsuarios(Usuarios usuarios) {
+        this.usuarios = usuarios;
+    }
+
+    public void setLibro(Libros libro) {
+        this.libro = libro;
+    }
+    public void setLoanDate(LocalDate loanDate) {
+        LoanDate = loanDate;
+    }
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+
+
+
+
     public String toString(){
         return "----- Informacion De Prestamo -----" + "\n" +
                 "--------------------------------"+ "\n" +
