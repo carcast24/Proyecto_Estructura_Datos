@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class UsuariosManager implements Managers<Usuarios> {
     private ArrayList<Usuarios> usuarios = new ArrayList<>();
@@ -37,9 +38,10 @@ public class UsuariosManager implements Managers<Usuarios> {
     }
 
     @Override
-    public List listar() {
-        return List.of();
+    public List<Usuarios> listar() {
+        return usuarios;
     }
+
     public boolean eliminarUsuario(String id){
         for (int i = 0; i < usuarios.size(); i++){
             if (usuarios.get(i).getId().equalsIgnoreCase(id)){ // ignora la forma en la que se escribe
@@ -50,6 +52,38 @@ public class UsuariosManager implements Managers<Usuarios> {
         }
         return false;
     }
-    // implimentar mi propio set
+    public void menuUsuarios(Scanner sc){
+        System.out.println("----- Gestion de Usuarios -----\n");
+        char secondOption;
+        do {
+            System.out.println("A. Registrar Ususario.");
+            System.out.println("B. Eliminar Usuario.");
+            System.out.println("C. Modificar Usuario.");
+            System.out.println("D. Listar Usuarios.");
+            System.out.println("S. Salir, Gestion de Usuarios. \n");
+            System.out.println("Digite la Opcion aqui ↓: ");
+            secondOption = sc.next().toUpperCase().charAt(0); // lee -- pasa a mayuscula -- toma el primer caracter
+
+            switch (secondOption){
+                case 'A' :
+                    System.out.println("----- Registro Para Nuevo Usuario. -----");
+                    break;
+                case 'B' :
+                    System.out.println("----- Eliminar A Un Usuario. -----");
+                    break;
+                case 'C' :
+                    System.out.println("----- Modificar A Un Usuario. -----");
+                    break;
+                case 'D' :
+                    System.out.println("----- Expedir Lista De Usuarios. -----");
+                    break;
+                case 'S' :
+                    System.out.println("Hasta Luego...");
+                    break;
+                default:
+                    System.out.println("Opcion No Valida...");
+            }
+        }while (secondOption != 'S');
+    }
 
 }

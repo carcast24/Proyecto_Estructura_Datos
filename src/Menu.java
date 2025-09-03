@@ -18,38 +18,7 @@ public class Menu {
 
             switch (firstOption) {
                 case 1:
-                    System.out.println("----- Gestion de Usuarios -----\n");
-                    char secondOption;
-                    do {
-                        System.out.println("A. Registrar Ususario.");
-                        System.out.println("B. Eliminar Usuario.");
-                        System.out.println("C. Modificar Usuario.");
-                        System.out.println("D. Listar Usuarios.");
-                        System.out.println("S. Salir, Gestion de Usuarios. \n");
-                        System.out.println("Digite la Opcion aqui ↓: ");
-                        secondOption = sc.next().toUpperCase().charAt(0); // lee -- pasa a mayuscula -- toma el primer caracter
 
-                        switch (secondOption){
-                            case 'A' :
-                                System.out.println("----- Registro Para Nuevo Usuario. -----");
-                                break;
-                            case 'B' :
-                                System.out.println("----- Eliminar A Un Usuario. -----");
-                                break;
-                            case 'C' :
-                                System.out.println("----- Modificar A Un Usuario. -----");
-                                break;
-                            case 'D' :
-                                System.out.println("----- Expedir Lista De Usuarios. -----");
-                                break;
-                            case 'S' :
-                                System.out.println("Hasta Luego...");
-                                break;
-                            default:
-                                System.out.println("Opcion No Valida...");
-                        }
-                    }while (secondOption != 'S');
-                    break;
 
                 case 2 :
                     System.out.println("----- Gestion de Prestamos -----\n");
