@@ -30,18 +30,18 @@ public class Menu {
                 String entrada = sc.nextLine().trim();
 
                 if (entrada.isEmpty()) {
-                    System.out.println("⚠ No puede estar vacío.\n");
+                    System.out.println(" No puede estar vacío.\n");
                     continue;
                 }
 
                 try {
                     firstOption = Integer.parseInt(entrada);
                     if (firstOption < 1 || firstOption > 5) {
-                        System.out.println("⚠ Opción fuera de rango (1-5).\n");
+                        System.out.println(" Opción fuera de rango (1-5).\n");
                         firstOption = -1;
                     }
                 } catch (NumberFormatException e) {
-                    System.out.println("⚠ Ingresa solo números.\n");
+                    System.out.println("Ingresa solo números.\n");
                 }
             }
             switch (firstOption) {
