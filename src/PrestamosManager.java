@@ -22,9 +22,9 @@ public class PrestamosManager implements Managers<Prestamo>{
     }
 
     @Override
-    public boolean modificar(String isbn, Prestamo nuevo) {
+    public boolean modificar(String id, Prestamo nuevo) {
         for(int i = 0; i < prestamos.size(); i++){
-            if(prestamos.get(i).getLibro().getIsbn().equalsIgnoreCase(isbn)){
+            if(prestamos.get(i).getId().equalsIgnoreCase(id)){
                 prestamos.set(i,nuevo);
                 return true; // hizo el cambio
             }
@@ -33,9 +33,9 @@ public class PrestamosManager implements Managers<Prestamo>{
     }
 
     @Override
-    public Prestamo buscar(String isbn) {
+    public Prestamo buscar(String id) {
         for(Prestamo p : prestamos){
-            if (p.getLibro().getIsbn().equalsIgnoreCase(isbn)) {
+            if (p.getId().equalsIgnoreCase(id)) {
                 return p;
             }
         }
@@ -56,7 +56,7 @@ public class PrestamosManager implements Managers<Prestamo>{
                         System.out.println("C. Listar Prestamos Activos.");
                         System.out.println("S. Salir, Gestion Prestamos. \n");
                         System.out.println("Digite la Opcion aqui ↓: ");
-                        String input =sc.nextLine().trim().toUpperCase(); // lee -- pasa a mayuscula -- toma el primer caracter
+                        String input = sc.nextLine().trim().toUpperCase(); // lee -- pasa a mayuscula -- toma el primer caracter
                         thirdOption = input.isEmpty()? ' ' : input.charAt(0); // con ternario se valida si hay entrada vacia no se ejecuta el codigo
 
                         switch (thirdOption){
