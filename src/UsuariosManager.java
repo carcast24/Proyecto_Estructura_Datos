@@ -68,19 +68,54 @@ public class UsuariosManager implements Managers<Usuarios> {
 
             switch (secondOption){
                 case 'A' :
-                    System.out.println("----- Registro Para Nuevo Usuario. -----");
+                    System.out.println("----- Registro de Usuario -----");
+                    System.out.print("ID: ");
+                    String id = sc.nextLine();
+                    System.out.print("Nombre: ");
+                    String nombre = sc.nextLine();
+                    System.out.print("Correo: ");
+                    String email = sc.nextLine();
+                    agregar(new Usuarios(nombre, id, email));
+                    System.out.println(" Usuario agregado.\n");
                     break;
                 case 'B' :
-                    System.out.println("----- Eliminar A Un Usuario. -----");
+                    System.out.println("----- Eliminar Usuario -----");
+                    System.out.print("ID del usuario a eliminar: ");
+                    String idEliminar = sc.nextLine();
+                    if (eliminar(idEliminar)) {
+                        System.out.println(" Usuario eliminado.\n");
+                    } else {
+                        System.out.println(" Usuario no encontrado.\n");
+                    }
                     break;
                 case 'C' :
-                    System.out.println("----- Modificar A Un Usuario. -----");
+                    System.out.println("----- Modificar Usuario -----");
+                    System.out.print("ID del usuario a modificar: ");
+                    String idMod = sc.nextLine();
+                    Usuarios existente = buscar(idMod);
+                    if (existente == null) { // lo busca primero, si no esta no sigue en la ejecucion
+                        System.out.println(" Usuario no encontrado.\n");
+                        break;
+                    }
+                    System.out.print("Nuevo nombre: ");
+                    String nuevoNombre = sc.nextLine();
+                    System.out.print("Nuevo correo: ");
+                    String nuevoCorreo = sc.nextLine();
+                    modificar(idMod, new Usuarios(nuevoNombre, idMod, nuevoCorreo));
+                    System.out.println("Usuario modificado.\n");
                     break;
                 case 'D' :
-                    System.out.println("----- Expedir Lista De Usuarios. -----");
+                    System.out.println("----- Lista de Usuarios -----");
+                    if (usuarios.isEmpty()) {
+                        System.out.println("No hay usuarios registrados.\n");
+                    } else {
+                        for (Usuarios u : listar()) {
+                            System.out.println(u);
+                        }
+                    }
                     break;
                 case 'S' :
-                    System.out.println("Hasta Luego...");
+                    System.out.println("Volviendo al menú principal....");
                     break;
                 default:
                     System.out.println("Opcion No Valida...");
