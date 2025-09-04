@@ -46,7 +46,58 @@ public class LibrosManager implements Managers<Libros>{
     public List<Libros> listar() {
         return libros;
     }
-
+    // ----------- metodos de ayuda -----------------------
+    private void agregarLibro(Scanner sc) {
+        System.out.print("ISBN: ");
+        String isbn = sc.nextLine();
+        System.out.print("Título: ");
+        String titulo = sc.nextLine();
+        System.out.print("Autor: ");
+        String autor = sc.nextLine();
+        System.out.print("Género: ");
+        String genero = sc.nextLine();
+        agregar(new Libros(titulo, autor, isbn, genero));
+        System.out.println(" Libro agregado.\n");
+    }
+    //---------------------------------------------------------
+    private void eliminarLibro(Scanner sc) {
+        System.out.print("ISBN del libro a eliminar: ");
+        String isbn = sc.nextLine();
+        if (eliminar(isbn)) {
+            System.out.println(" Libro eliminado.\n");
+        } else {
+            System.out.println(" Libro no encontrado.\n");
+        }
+    }
+    //------------------------------------------------------------
+    private void modificarLibro(Scanner sc) {
+        System.out.print("ISBN del libro a modificar: ");
+        String isbn = sc.nextLine();
+        Libros existente = buscar(isbn);
+        if (existente == null) {
+            System.out.println(" Libro no encontrado.\n");
+            return;
+        }
+        System.out.print("Nuevo título: ");
+        String titulo = sc.nextLine();
+        System.out.print("Nuevo autor: ");
+        String autor = sc.nextLine();
+        System.out.print("Nuevo género: ");
+        String genero = sc.nextLine();
+        modificar(isbn, new Libros(titulo, autor, isbn, genero));
+        System.out.println(" Libro modificado.\n");
+    }
+    //------------------------------------------------------------------
+    private void listarLibros() {
+        System.out.println("----- Inventario -----");
+        if (libros.isEmpty()) {
+            System.out.println("No hay libros registrados.\n");
+        } else {
+            for (Libros l : listar()) {
+                System.out.println(l);
+            }
+        }
+    }
     public void menuLibros(Scanner sc){
         System.out.println("----- Gestion de Inventarios. -----\n");
         char fourthOption;
@@ -64,15 +115,19 @@ public class LibrosManager implements Managers<Libros>{
             switch (fourthOption){
                 case 'A' :
                     System.out.println("----- Agregar Libro -----");
+                    agregarLibro(sc); // llamo el metodo auxiliar para lijerar el codigo en este fragmento
                     break;
                 case 'B' :
                     System.out.println("----- Eliminar Libro -----");
+                    eliminarLibro(sc);
                     break;
                 case 'C' :
                     System.out.println("----- Modifica Un Libro -----");
+                    modificarLibro(sc);
                     break;
                 case 'D' :
                     System.out.println("----- Expide Un Inventario -----");
+                    listarLibros();
                     break;
                 case 'S':
                     System.out.println("¿Terminaste? bye!....");

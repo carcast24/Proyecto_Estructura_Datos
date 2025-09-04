@@ -53,6 +53,8 @@ public class UsuariosManager implements Managers<Usuarios> {
         }
         return false;
     }
+
+    //---------------------------------------------------------------------------------------
     public void menuUsuarios(Scanner sc){
         System.out.println("----- Gestion de Usuarios -----\n");
         char secondOption;

@@ -3,6 +3,8 @@ public class Libros {
     private String author;
     private String isbn;
     private String genres;
+    private boolean disponible;
+
 
     // constructor
 
@@ -11,6 +13,7 @@ public class Libros {
         this.author = author;
         this.isbn = isbn;
         this.genres = genres;
+        this.disponible = true; // por defecto, los libros nuevos están disponibles
     }
     // getter
     public String getTitle(){
@@ -27,9 +30,15 @@ public class Libros {
     public String getGenres() {
         return genres;
     }
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+
     //setter
-
-
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
     public void setTitle(String title) {
         this.title = title;
     }
@@ -55,6 +64,7 @@ public class Libros {
                 "Autor: " + author + "\n" +
                 "ISBN: " + isbn + "\n" +
                 "Genero: " + genres + "\n" +
+                "Estado: " + (disponible ? "Disponible" : "Prestado") +
                 "---------------------------------";
     }
 }
